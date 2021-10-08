@@ -1,55 +1,69 @@
-<html>
-<head>
-<title>multiple-choice quiz form</title>
-</head>
-<body bgcolor=#ffffff>
 
-<h3>Coding Quiz</h3>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeQuiz</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-Check the answer to each multiple-coice question, and click on the "Send Form" button to submit the information.
+  <body>
+    <header>Coding Quiz</header>
 
-<P>1. What does "DOM" mean?:<BR>
-<input type="radio" name="1. What does DOM  mean? " value="Document Object Model">Document Object Model<BR>
-<input type="radio" name="1. What does DOM  mean? " value="Dominant Object Model">Dominant Object Model<BR>
-<input type="radio" name="1. What does DOM  mean? " value="Deisel Operated Motor">Deisel Operated Motor<BR>
-<input type="radio" name="1. What does DOM  mean? " value="Due On Monday">Due On Monday<BR>
-</p>
+    <main class="container">
+      <section id="directions">
+        <p>This is a short quiz about coding. Click the button to start!</p>
+        <button id="startQuiz">START QUIZ</button>
+        <button id="seeScore" onclick="showHigh();">High Scores</button>
+      </section>
 
-<P>2. What is JavaScript?:<BR>
-<input type="radio" name="2. What is JavaScript? " value="The sacred Nerd text ">The sacred Nerd text <BR>
-<input type="radio" name="2. What is JavaScript? " value="Computer styling">Computer styling<BR>
-<input type="radio" name="2. What is JavaScript? " value="Programming language">Programming language<BR>
-<input type="radio" name="2. What is JavaScript? " value="Website event listeners">Website event listeners<BR>
-</p>
+      <section id="options">
+        <div id="count">Time:</div>
 
-<P>3. What is scope?:<BR>
-<input type="radio" name="3. What is scope?" value="The size of blocks in code">The size of blocks in code<BR>
-<input type="radio" name="3. What is scope?" value="accessibility (visibility) of variables">accessibility (visibility) of variables<BR>
-<input type="radio" name="3. What is scope?" value="Mouthwash">Mouthwash<BR>
-<input type="radio" name="3. What is scope?" value="Declaration of variables">Declaration of variables<BR>
-</p>
+        <div id="questionHere">
+          <p></p>
+        </div>
 
-<P>4. What's the purpose of a function?:<BR>
-    <input type="radio" name="3. What's the purpose of a function?" value="To define a block of code">To define a block of code<BR>
-    <input type="radio" name="3. What's the purpose of a function?" value="To make the computer boot up">To make the computer boot up<BR>
-    <input type="radio" name="3. What's the purpose of a function?" value="A set of statements that performs a task or calculates a value">A set of statements that performs a task or calculates a value<BR>
-    <input type="radio" name="3. What's the purpose of a function?" value="A & C">A & C<BR>
-</p>
+        <ul id="questions">
+          <li><button id="a" onclick="gradeAnswer('a')">A</button></li>
+          <li><button id="b" onclick="gradeAnswer('b')">B</button></li>
+          <li><button id="c" onclick="gradeAnswer('c')">C</button></li>
+          <li><button id="d" onclick="gradeAnswer('d')">D</button></li>
+        </ul>
+        <div id="score"></div>
+      </section>
 
-<P>5. What are examples of event listeners?:<BR>
-    <input type="radio" name="3. What are examples of event listeners?" value="Boot up">Boot up<BR>
-    <input type="radio" name="3. What are examples of event listeners?" value="Drive">Drive<BR>
-    <input type="radio" name="3. What are examples of event listeners?" value="Cookies">Cookies<BR>
-    <input type="radio" name="3. What are examples of event listeners?" value="Click">Click<BR>
-    </p>
+      <div id="end">
+        <div id="final"></div>
+        <input
+          type="text"
+          size="40"
+          placeholder="User Initials"
+          name="intials"
+          id="initials"
+        />
+        <button id="enter">Submit!</button>
+      </div>
 
+      <div id="results">
+        <div id="scoreBoard">
+          <div id="flex">
+            <h1 id="leaderBoard">Username</h1>
+            <h1 id="leaderScore">Score</h1>
+          </div>
+        </div>
+      </div>
 
-<br>
-<br>
-<br>
-<br>
-<input type="view scores" value="view scores">
-<input type="reset" value="Clear Form">
-</form>
-</body>
+      <section id="endButtons">
+        <button id="repeat" onclick="repeatQuiz();">
+          Click to Play Again!
+        </button>
+        <button id="clear" onclick="clearData();">Clear Score</button>
+      </section>
+    </main>
+
+    <script src="./java/script.js"></script>
+  </body>
 </html>
